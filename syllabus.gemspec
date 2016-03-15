@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A wrapper for communicating with the Teachable API"
   s.authors     = ["Natalia Aranguren"]
   s.email       = 'nati.aranguren@gmail.com'
-  s.files       = ["lib/syllabus.rb", "lib/syllabus/user.rb", "lib/syllabus/order.rb", "lib/syllabus/client.rb", "lib/syllabus/client_auth.rb", "lib/syllabus/client_orders.rb", "lib/syllabus/api_error.rb"]
+  s.files       = Dir['lib/*.rb'] + Dir['lib/syllabus/*.rb']
   s.test_files  = `git ls-files -- {test}/*`.split("\n")
   s.homepage    = 'https://bitbucket.org/metaprogrammed/syllabus'
   s.license     = 'MIT'
