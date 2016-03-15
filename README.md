@@ -1,6 +1,9 @@
 ##Syllabus
 
 
+![alt text](http://i.imgur.com/VpGwuk2.png "Syllabus")
+
+
 ###A Teachable API wrapper written in Ruby
 
 **Keeping track of your Teachable orders has never been so easy.**

@@ -4,7 +4,7 @@ describe Syllabus::ClientAuth do
 
   describe "when successful" do
     it "returns a Syllabus::User object" do
-      client = Syllabus::Client.new(:user_email => 'dev-8@example.com', :user_token => 'qC3v3HvBfKxCQuyqu49g')
+      client = Syllabus::Client.new(:user_email => "dev-#{rand(1000)}@example.com", :user_token => 'qC3v3HvBfKxCQuyqu49g')
       user = client.current_user
       assert_equal "Syllabus::User", user.class.name
       assert_equal "dev-8@example.com", user.email
@@ -12,13 +12,12 @@ describe Syllabus::ClientAuth do
   end
 
   describe "when signing up a new user" do
-    # Passes
-    # it "signs up a user with a valid email/password" do
-    #   client = Syllabus::Client.new({})
-    #   user = client.sign_up("dev-14@example.com", "password", "password")
-    #   assert_equal "Syllabus::User", user.class.name
-    #   assert_equal "dev-14@example.com", user.email
-    # end
+    it "signs up a user with a valid email/password" do
+      client = Syllabus::Client.new({})
+      user = client.sign_up("dev-14@example.com", "password", "password")
+      assert_equal "Syllabus::User", user.class.name
+      assert_equal "dev-14@example.com", user.email
+    end
 
     it "returns an error if sign up fails" do
       client = Syllabus::Client.new
