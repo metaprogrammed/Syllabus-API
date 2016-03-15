@@ -4,7 +4,7 @@ describe Syllabus::ClientAuth do
 
   describe "when successful" do
     it "returns a Syllabus::User object" do
-      client = Syllabus::Client.new(:user_email => "dev-#{rand(1000)}@example.com", :user_token => 'qC3v3HvBfKxCQuyqu49g')
+      client = Syllabus::Client.new(:user_email => "dev@example.com", :user_token => 'qC3v3HvBfKxCQuyqu49g')
       user = client.current_user
       assert_equal "Syllabus::User", user.class.name
       assert_equal "dev-8@example.com", user.email
