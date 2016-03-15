@@ -3,8 +3,8 @@ require 'helper'
 describe Syllabus::ClientOrders do
 
   describe "when creating an order" do
-    it "returns an order object as a hash if params are valid" do
-      client = Syllabus::Client.new(:user_email => 'dev-@example.com', :user_token => 'qC3v3HvBfKxCQuyqu49g')
+    it "returns an order object if params are valid" do
+      client = Syllabus::Client.new(:user_email => 'dev-8@example.com', :user_token => 'qC3v3HvBfKxCQuyqu49g')
       order = client.add_order(2, 3.00, 3, "dev-8@example.com", {"special_instructions" => "special instructions foo bar"})
       assert_equal "Syllabus::Order", order.class.name
       assert_equal "dev-8@example.com", order.email
@@ -38,7 +38,8 @@ describe Syllabus::ClientOrders do
   describe "deleting an order" do
     it "deletes the current user's order that matches the provided id" do
       client = Syllabus::Client.new(:user_email => 'dev-8@example.com', :user_token => 'qC3v3HvBfKxCQuyqu49g')
-      assert_equal "204", client.delete_order(148, {})
+      order = client.add_order(2, 3.00, 3, "dev-8@example.com", {"special_instructions" => "special instructions foo bar"})
+      assert_equal 204, client.delete_order(order.id, {})
     end
 
     it "returns an error if the current user doesn't have an order matching the provided id" do
