@@ -1,7 +1,7 @@
 ##Syllabus
 
 
-![alt text](http://i.imgur.com/VpGwuk2.png "Syllabus")
+![alt text](http://i.imgur.com/50A3U2D.png "Syllabus")
 
 
 ###A Teachable API wrapper written in Ruby
